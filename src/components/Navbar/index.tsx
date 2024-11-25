@@ -35,31 +35,20 @@ export default function Navbar() {
         ref={navbarRef}
       >
         <nav className={styles.main}>
-          <div className={styles.left}>
-            <Link href="/" className={styles.logo}>
-              <span className={styles.sr}>Pinjol Check Up</span>
-              <Image
-                alt=""
-                src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
-                width={32}
-                height={32}
-              />
-            </Link>
+          <Link href="/" className={styles.left}>
+            <span className={styles.sr}>Pinjol Check Up</span>
+            <Image
+              alt=""
+              src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+              width={32}
+              height={32}
+            />
             <span className={styles.logo_txt}>
               Pinjol
-              <span
-                style={{
-                  background:
-                    'linear-gradient(90deg, #6366f1 5%, #4f46e5  90%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Check
-              </span>
+              <span className={styles.logo_highlighted}>Check</span>
               Up
             </span>
-          </div>
+          </Link>
           <div className={styles.sm_right}>
             <Menu>
               <MenuButton className={styles.link}>Options</MenuButton>

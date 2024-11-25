@@ -1,0 +1,12 @@
+.var {
+  &_first {
+    @apply fill-[#E5E5E5] dark:fill-[#404040];
+  }
+  &_second {
+    @apply fill-white dark:fill-[#262626];
+  }
+}
+
+.luminous {
+  @apply mix-blend-luminosity;
+}

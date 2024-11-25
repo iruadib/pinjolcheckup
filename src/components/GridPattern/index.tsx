@@ -1,7 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import { useId } from 'react'
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
+import styles from './styles.module.css'
 
 interface AnimatedGridPatternProps {
   width?: number
@@ -27,22 +28,36 @@ export function AnimatedGridPattern({
 }: AnimatedGridPatternProps) {
   const id = useId()
   const secId = useId()
+
+  const xAnimation = {
+    initial: { opacity: 0.3, x: '100%' },
+    animate: { opacity: 1, x: '-12.5%' },
+    transition: { duration: 5, repeat: Infinity, ease: 'linear' }
+  }
+
+  const y1Animation = {
+    initial: { opacity: 0.3, y: '50%' },
+    animate: { opacity: 1, y: '-100%' },
+    transition: { duration: 5, delay: 6, repeat: Infinity, ease: 'linear' }
+  }
+
+  const y2Animation = {
+    initial: { opacity: 0.3, y: '0%' },
+    animate: { opacity: 1, y: '-150%' },
+    transition: { duration: 8, repeat: Infinity, ease: 'linear' }
+  }
   return (
     <svg
       aria-hidden="true"
-      className={cn(
-        'pointer-events-none absolute inset-0 h-full w-full fill-indigo-400/10 stroke-indigo-400/10',
-        className
-      )}
+      className={cn(styles.wrapper, className)}
       {...props}
     >
-      <g
+      <motion.g
         opacity="1"
-        className="z-10"
-        style={{
-          transformOrigin: '0px 0px',
-          animation: 'translateXAnimation 5s infinite linear'
-        }}
+        className={styles.line_first}
+        initial={xAnimation.initial}
+        animate={xAnimation.animate}
+        transition={xAnimation.transition}
       >
         <line
           y1="-0.5"
@@ -51,15 +66,13 @@ export function AnimatedGridPattern({
           transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 222 375)"
           stroke={`url(#${secId})`}
         />
-      </g>
-      <g
+      </motion.g>
+      <motion.g
         opacity="1"
-        className="z-10"
-        style={{
-          transformOrigin: '0px 0px',
-          transform: 'translateY(-100%)',
-          animation: 'translateYAnimation 5s 6s infinite linear'
-        }}
+        className={styles.line_second}
+        initial={y1Animation.initial}
+        animate={y1Animation.animate}
+        transition={y1Animation.transition}
       >
         <line
           y1="-0.5"
@@ -68,14 +81,13 @@ export function AnimatedGridPattern({
           transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 1200 323)"
           stroke={`url(#${secId})`}
         />
-      </g>
-      <g
+      </motion.g>
+      <motion.g
         opacity="1"
-        className="z-10"
-        style={{
-          transformOrigin: '0px 0px',
-          animation: 'translateY2Animation 8s infinite linear'
-        }}
+        className={styles.line_third}
+        initial={y2Animation.initial}
+        animate={y2Animation.animate}
+        transition={y2Animation.transition}
       >
         <line
           y1="-0.5"
@@ -84,41 +96,7 @@ export function AnimatedGridPattern({
           transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 225 323)"
           stroke={`url(#${secId})`}
         />
-      </g>
-      <style jsx>{`
-        @keyframes translateYAnimation {
-          from {
-            opacity: 0.3;
-            transform: translateY(50%);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(-100%);
-          }
-        }
-
-        @keyframes translateY2Animation {
-          from {
-            opacity: 0.3 !important;
-            transform: translateY(0%);
-          }
-          to {
-            opacity: 1 !important;
-            transform: translateY(-150%);
-          }
-        }
-
-        @keyframes translateXAnimation {
-          from {
-            opacity: 0.3;
-            transform: translateX(100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(-12.5%);
-          }
-        }
-      `}</style>
+      </motion.g>
       <defs>
         <linearGradient
           id={secId}

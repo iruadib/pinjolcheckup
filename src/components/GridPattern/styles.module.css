@@ -1,0 +1,15 @@
+.wrapper {
+  @apply pointer-events-none absolute inset-0 h-full w-full fill-indigo-400/10 stroke-indigo-400/10;
+}
+
+.line {
+  &_first {
+    @apply z-10 origin-top;
+  }
+  &_second {
+    @apply z-10 origin-top -translate-y-full;
+  }
+  &_third {
+    @apply z-10 origin-top;
+  }
+}

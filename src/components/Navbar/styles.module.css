@@ -11,14 +11,15 @@
 }
 
 .left {
-  @apply flex md:flex-1 items-center;
+  @apply flex md:flex-1 items-center -m-1.5 p-1.5;
 }
 
 .logo {
-  @apply -m-1.5 p-1.5;
-
   &_txt {
     @apply hidden md:block text-xl ml-3 font-medium;
+  }
+  &_highlighted {
+    @apply bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 text-transparent bg-clip-text;
   }
 }
 

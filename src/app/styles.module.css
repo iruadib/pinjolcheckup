@@ -1,0 +1,35 @@
+.wrapper {
+  @apply relative isolate;
+}
+
+.bg {
+  @apply [mask-image:radial-gradient(600px_at_top_center,transparent,white)];
+}
+
+.left {
+  @apply max-w-2xl pt-4 pb-16 sm:py-36 text-left;
+}
+
+.heading {
+  @apply text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-7xl;
+}
+
+.sub {
+  @apply mt-3 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8;
+}
+
+.group {
+  @apply mt-5;
+}
+
+.btn {
+  @apply mt-5 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
+
+.right {
+  @apply relative max-w-3xl text-center mx-auto lg:mr-0 lg:ml-auto block;
+}
+
+.showcase {
+  @apply size-full;
+}

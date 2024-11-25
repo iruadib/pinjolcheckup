@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion'
+import styles from './styles.module.css'
 
 import { cn } from '@/lib/utils'
 
@@ -34,16 +35,11 @@ export function WordRotate({
   }, [words, duration])
 
   return (
-    <div className="overflow-hidden py-2">
+    <div className={styles.wrapper}>
       <AnimatePresence mode="wait">
         <motion.h1
           key={words[index]}
-          className={cn(className)}
-          style={{
-            background: 'linear-gradient(90deg, #6366f1 5%, #4f46e5  90%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}
+          className={cn(className, styles.txt)}
           {...framerProps}
         >
           {words[index]}

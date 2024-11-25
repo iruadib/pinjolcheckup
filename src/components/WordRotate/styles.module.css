@@ -1,0 +1,7 @@
+.wrapper {
+  @apply overflow-hidden py-2;
+}
+
+.txt {
+  @apply bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 text-transparent bg-clip-text;
+}
