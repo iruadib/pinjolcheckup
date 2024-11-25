@@ -2,6 +2,10 @@
   @apply relative isolate;
 }
 
+.main {
+  @apply block lg:flex flex-row flex-grow items-center;
+}
+
 .bg {
   @apply [mask-image:radial-gradient(600px_at_top_center,transparent,white)];
 }

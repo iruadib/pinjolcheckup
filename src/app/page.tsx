@@ -12,7 +12,7 @@ export default function Cek() {
     <>
       <div className={styles.wrapper}>
         <AnimatedGridPattern className={cn(styles.bg)} />
-        <div className="block lg:flex flex-row flex-grow items-center">
+        <div className={styles.main}>
           <motion.div
             className={styles.left}
             initial={{ x: -20 }}
