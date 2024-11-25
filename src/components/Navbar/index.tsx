@@ -45,7 +45,20 @@ export default function Navbar() {
                 height={32}
               />
             </Link>
-            <span className={styles.logo_txt}>PinjolCheckUp</span>
+            <span className={styles.logo_txt}>
+              Pinjol
+              <span
+                style={{
+                  background:
+                    'linear-gradient(90deg, #6366f1 5%, #4f46e5  90%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                Check
+              </span>
+              Up
+            </span>
           </div>
           <div className={styles.sm_right}>
             <Menu>
