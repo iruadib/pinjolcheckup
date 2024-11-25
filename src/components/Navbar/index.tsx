@@ -7,8 +7,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 const navigation = [
   { name: 'Cek Tagihan', href: '/tagihan' },
-  { name: 'Cek Cicilan', href: '/' },
-  { name: 'Cek Deposit', href: '/cek' }
+  { name: 'Cek Cicilan', href: '/cicilan' },
+  { name: 'Cek Deposit', href: '/deposit' }
 ]
 
 export default function Navbar() {

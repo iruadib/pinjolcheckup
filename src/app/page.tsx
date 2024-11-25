@@ -43,14 +43,20 @@ export default function Cek() {
               </div>
             </div>
           </motion.div>
-          <div className="relative max-w-3xl text-center mx-auto lg:mr-0 lg:ml-auto block">
+          <motion.div
+            className="relative max-w-3xl text-center mx-auto lg:mr-0 lg:ml-auto block"
+            initial={{ x: 20 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             <Safari
-              url="https://google.com"
+              url="https://pinjolcheckup.vercel.app/"
               className="size-full"
               // src="https://get.wallhere.com/photo/Oshi-no-Ko-Kurokawa-Akane-Mem-Cho-kana-arima-Aqua-hoshino-ruby-hoshino-Hoshino-Ai-looking-at-viewer-2252324.jpg"
               src="https://canopywp.wpengine.com/wp-content/uploads/2024/02/Frame-1948758242-5.svg"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

@@ -1,3 +1,3 @@
 export default function TagihanPage() {
-  return <>Amjay Mabar</>
+  return <>Amjay Tagihan</>
 }
