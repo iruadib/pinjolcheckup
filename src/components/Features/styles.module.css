@@ -1,0 +1,77 @@
+.wrapper {
+  @apply py-20 sm:py-28;
+}
+
+.main {
+  @apply mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8;
+}
+
+.title {
+  @apply mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl;
+}
+
+.highlighted {
+  @apply bg-gradient-to-r from-indigo-400 via-indigo-600 to-indigo-800 text-transparent bg-clip-text;
+}
+
+.items {
+  @apply mt-14 grid gap-4 sm:mt-16 lg:grid-cols-2 lg:grid-rows-2;
+}
+
+.item {
+  &_first {
+    @apply relative max-lg:row-start-1 bg-white;
+  }
+
+  &_second {
+    @apply relative max-lg:row-start-2 lg:col-start-1 lg:row-start-2 bg-white;
+  }
+
+  &_third {
+    @apply relative lg:row-span-2 bg-white;
+  }
+
+  &_title {
+    @apply mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center;
+
+    &_wrapper {
+      @apply px-6 py-6 sm:py-8 sm:px-10;
+    }
+  }
+}
+
+.cont {
+  @apply relative flex h-full flex-col overflow-hidden;
+}
+
+.img_2 {
+  @apply object-left-bottom object-cover h-full w-full;
+}
+
+.img {
+  @apply object-left-top object-cover h-full w-full;
+
+  &_wrapper {
+    @apply relative min-h-[15rem] w-full grow;
+  }
+
+  &_cont {
+    &_first {
+      @apply absolute bottom-0 left-10 right-0 top-0 overflow-hidden rounded-tl-lg rounded-bl-lg bg-gray-900;
+    }
+    &_second {
+      @apply absolute bottom-0 left-10 right-0 top-0 overflow-hidden rounded-tl-lg rounded-br-lg bg-gray-900;
+    }
+    &_third {
+      @apply absolute bottom-0 left-10 right-0 top-0 overflow-hidden rounded-tl-lg rounded-br-lg bg-gray-900;
+    }
+  }
+}
+
+.description {
+  @apply mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center;
+}
+
+.border {
+  @apply pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5;
+}

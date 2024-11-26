@@ -1,0 +1,29 @@
+.wrapper {
+  @apply w-full;
+}
+
+.cont {
+  @apply flex flex-wrap -mx-3 mb-2 sm:mb-6;
+}
+
+.half {
+  @apply md:!w-1/2;
+}
+
+.res {
+  @apply mt-4 mb-2 block relative;
+}
+
+.btn {
+  &_outlined {
+    @apply transition-all rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black hover:bg-indigo-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus:text-white focus-visible:outline-indigo-600;
+  }
+
+  &_filled {
+    @apply transition-all rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+  }
+
+  &_group {
+    @apply mt-0 gap-x-2 flex justify-start;
+  }
+}

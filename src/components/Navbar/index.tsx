@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 import Link from 'next/link'
@@ -37,12 +37,12 @@ export default function Navbar() {
         <nav className={styles.main}>
           <Link href="/" className={styles.left}>
             <span className={styles.sr}>Pinjol Check Up</span>
-            <Image
+            {/* <Image
               alt=""
               src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
               width={32}
               height={32}
-            />
+            /> */}
             <span className={styles.logo_txt}>
               Pinjol
               <span className={styles.logo_highlighted}>Check</span>

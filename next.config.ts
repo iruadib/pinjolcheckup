@@ -9,20 +9,6 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
         search: ''
-      },
-      {
-        protocol: 'https',
-        hostname: 'canopywp.wpengine.com',
-        port: '',
-        pathname: '/**',
-        search: ''
-      },
-      {
-        protocol: 'https',
-        hostname: 'get.wallhere.com',
-        port: '',
-        pathname: '/**',
-        search: ''
       }
     ]
   }

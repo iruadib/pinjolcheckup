@@ -31,7 +31,7 @@ export function AnimatedGridPattern({
 
   const x1Animation = {
     initial: { opacity: 0.3, x: '100%' },
-    animate: { opacity: 1, x: '-12.5%' },
+    animate: { opacity: 1, x: '-25%' },
     transition: { duration: 5, repeat: Infinity, ease: 'linear' }
   }
 

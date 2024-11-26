@@ -1,0 +1,11 @@
+.wrapper {
+  @apply py-24 md:py-28;
+}
+
+.title {
+  @apply text-4xl font-bold mb-6 lg:mb-10;
+}
+
+.highlighted {
+  @apply bg-gradient-to-r from-indigo-400 via-indigo-600 to-indigo-800 text-transparent bg-clip-text;
+}

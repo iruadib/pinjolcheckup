@@ -4,9 +4,14 @@ import { Safari } from '@/components/Showcase'
 import { WordRotate } from '@/components/WordRotate'
 import { motion } from 'framer-motion'
 import styles from './styles.module.css'
-import Link from 'next/link'
+import { RefObject } from 'react'
 
-export default function Hero() {
+export default function Hero({ ref }: { ref: RefObject<HTMLDivElement> }) {
+  const handleScrollToFeature = () => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   return (
     <>
       <div className={styles.wrapper}>
@@ -17,7 +22,7 @@ export default function Hero() {
             initial={{ x: -20 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false }}
           >
             <h1 className={styles.heading}>
               Buat Keputusan Keuangan{' '}
@@ -30,9 +35,9 @@ export default function Hero() {
               online untuk keputusan finansial yang lebih bijak
             </p>
             <div className={styles.group}>
-              <Link href="#" className={styles.btn}>
+              <button className={styles.btn} onClick={handleScrollToFeature}>
                 Get started
-              </Link>
+              </button>
             </div>
           </motion.div>
           <motion.div
@@ -40,13 +45,12 @@ export default function Hero() {
             initial={{ x: 20 }}
             whileInView={{ x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false }}
           >
             <Safari
               url="https://pinjolcheckup.vercel.app/"
               className={styles.showcase}
-              // src="https://get.wallhere.com/photo/Oshi-no-Ko-Kurokawa-Akane-Mem-Cho-kana-arima-Aqua-hoshino-ruby-hoshino-Hoshino-Ai-looking-at-viewer-2252324.jpg"
-              src="https://canopywp.wpengine.com/wp-content/uploads/2024/02/Frame-1948758242-5.svg"
+              src="/img/showcase.png"
             />
           </motion.div>
         </div>
