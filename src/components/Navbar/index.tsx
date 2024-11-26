@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 import Link from 'next/link'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { HiBars3BottomRight } from 'react-icons/hi2'
 
 const navigation = [
   { name: 'Cek Tagihan', href: '/tagihan' },
@@ -51,7 +52,9 @@ export default function Navbar() {
           </Link>
           <div className={styles.sm_right}>
             <Menu>
-              <MenuButton className={styles.link}>Options</MenuButton>
+              <MenuButton className={styles.link}>
+                <HiBars3BottomRight className={styles.icon} />
+              </MenuButton>
               <MenuItems
                 transition
                 anchor="bottom end"

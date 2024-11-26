@@ -31,6 +31,10 @@
   @apply flex md:hidden;
 }
 
+.icon {
+  @apply text-3xl;
+}
+
 .items {
   @apply w-40 origin-top-right rounded-md shadow-sm bg-white p-1 text-sm/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0;
 }
