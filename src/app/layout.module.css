@@ -1,5 +1,5 @@
 .body {
-  @apply antialiased;
+  @apply antialiased flex flex-col min-h-screen;
 }
 
 .main {

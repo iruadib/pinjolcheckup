@@ -3,13 +3,5 @@
 }
 
 .line {
-  &_first {
-    @apply z-10 origin-top;
-  }
-  &_second {
-    @apply z-10 origin-top -translate-y-full;
-  }
-  &_third {
-    @apply z-10 origin-top;
-  }
+  @apply z-10 origin-top;
 }

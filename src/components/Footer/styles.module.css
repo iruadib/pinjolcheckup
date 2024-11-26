@@ -1,0 +1,11 @@
+.wrapper {
+  @apply bg-white mt-auto py-10 relative block w-full text-center;
+}
+
+.main {
+  @apply text-sm text-gray-500;
+}
+
+.txt {
+  @apply hover:underline;
+}

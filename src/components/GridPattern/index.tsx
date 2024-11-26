@@ -29,14 +29,20 @@ export function AnimatedGridPattern({
   const id = useId()
   const secId = useId()
 
-  const xAnimation = {
+  const x1Animation = {
     initial: { opacity: 0.3, x: '100%' },
     animate: { opacity: 1, x: '-12.5%' },
     transition: { duration: 5, repeat: Infinity, ease: 'linear' }
   }
 
+  const x2Animation = {
+    initial: { opacity: 0.3, x: '100%' },
+    animate: { opacity: 1, x: '-25%' },
+    transition: { duration: 5, delay: 3, repeat: Infinity, ease: 'linear' }
+  }
+
   const y1Animation = {
-    initial: { opacity: 0.3, y: '50%' },
+    initial: { opacity: 0.3, y: '0%' },
     animate: { opacity: 1, y: '-100%' },
     transition: { duration: 5, delay: 6, repeat: Infinity, ease: 'linear' }
   }
@@ -54,10 +60,10 @@ export function AnimatedGridPattern({
     >
       <motion.g
         opacity="1"
-        className={styles.line_first}
-        initial={xAnimation.initial}
-        animate={xAnimation.animate}
-        transition={xAnimation.transition}
+        className={styles.line}
+        initial={x1Animation.initial}
+        animate={x1Animation.animate}
+        transition={x1Animation.transition}
       >
         <line
           y1="-0.5"
@@ -69,7 +75,22 @@ export function AnimatedGridPattern({
       </motion.g>
       <motion.g
         opacity="1"
-        className={styles.line_second}
+        className={styles.line}
+        initial={x2Animation.initial}
+        animate={x2Animation.animate}
+        transition={x2Animation.transition}
+      >
+        <line
+          y1="-0.5"
+          x2="70"
+          y2="-0.5"
+          transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 400 150)"
+          stroke={`url(#${secId})`}
+        />
+      </motion.g>
+      <motion.g
+        opacity="1"
+        className={styles.line}
         initial={y1Animation.initial}
         animate={y1Animation.animate}
         transition={y1Animation.transition}
@@ -84,7 +105,7 @@ export function AnimatedGridPattern({
       </motion.g>
       <motion.g
         opacity="1"
-        className={styles.line_third}
+        className={styles.line}
         initial={y2Animation.initial}
         animate={y2Animation.animate}
         transition={y2Animation.transition}
@@ -98,6 +119,20 @@ export function AnimatedGridPattern({
         />
       </motion.g>
       <defs>
+        <pattern
+          id={id}
+          width={width}
+          height={height}
+          patternUnits="userSpaceOnUse"
+          x={x}
+          y={y}
+        >
+          <path
+            d={`M.5 ${height}V.5H${width}`}
+            fill="none"
+            strokeDasharray={strokeDasharray}
+          />
+        </pattern>
         <linearGradient
           id={secId}
           x1="8.18126e-07"
@@ -114,20 +149,6 @@ export function AnimatedGridPattern({
           <stop offset="0.786458" stopColor="rgb(99 102 241)"></stop>
           <stop offset="1" stopColor="rgb(79 70 229)"></stop>
         </linearGradient>
-        <pattern
-          id={id}
-          width={width}
-          height={height}
-          patternUnits="userSpaceOnUse"
-          x={x}
-          y={y}
-        >
-          <path
-            d={`M.5 ${height}V.5H${width}`}
-            fill="none"
-            strokeDasharray={strokeDasharray}
-          />
-        </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${id})`} />
     </svg>

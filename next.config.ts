@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
         search: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'get.wallhere.com',
+        port: '',
+        pathname: '/**',
+        search: ''
       }
     ]
   }

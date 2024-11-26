@@ -1,5 +1,4 @@
 'use client'
-
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { LayoutRouterContext } from 'next/dist/shared/lib/app-router-context.shared-runtime'
@@ -32,9 +31,9 @@ export default function LayoutTransition({
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div {...motionProps} key={pathname}>
+      <motion.main {...motionProps} key={pathname}>
         <FrozenRouter>{children}</FrozenRouter>
-      </motion.div>
+      </motion.main>
     </AnimatePresence>
   )
 }
